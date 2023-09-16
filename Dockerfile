@@ -5,24 +5,28 @@ FROM debian:latest AS build-env
 RUN apt-get update
 RUN apt-get install -y curl git unzip
 
+#define variables
+ARG FLUTTER_SDK=/usr/local/flutter
+ARG APP=/app/
+
 #clone flutter
-RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
+RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK
 #change dir to current flutter folder and make a checkout to the specific version
-RUN cd /usr/local/flutter && git checkout efbf63d9c66b9f6ec30e9ad4611189aa80003d31
+RUN cd $FLUTTER_SDK && git checkout efbf63d9c66b9f6ec30e9ad4611189aa80003d31
 
 #setup the flutter path as an enviromental variable
-ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
+ENV PATH="$FLUTTER_SDK/bin:$FLUTTER_SDK/bin/cache/dart-sdk/bin:${PATH}"
 
 #Start to run Flutter commands
 #doctor to see if all was installes ok
 RUN flutter doctor -v
 
 #create folder to copy source code
-RUN mkdir /app/
+RUN mkdir $APP
 #copy source code to folder
-COPY . /app/
+COPY . $APP
 #stup new folder as the working directory
-WORKDIR /app/
+WORKDIR $APP
 
 #Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN flutter clean
