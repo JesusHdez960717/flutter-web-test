@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'We are too lazy to make a better OnBoarding page.',
+              'We are too lazy to make a better OnBoarding page.\n'
+                  'But Docker es tixa',
             ),
           ],
         ),
