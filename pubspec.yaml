@@ -2,7 +2,7 @@ name: root101
 description: Onboard page for Root101 portal
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0-RELEASE.20230915
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
