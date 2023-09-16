@@ -1,11 +1,11 @@
 {
-    "name": "untitled",
-    "short_name": "untitled",
+    "name": "root101",
+    "short_name": "root101",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Onboard page for Root101 portal",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
