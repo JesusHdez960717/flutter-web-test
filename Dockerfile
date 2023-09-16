@@ -3,7 +3,7 @@ FROM debian:latest AS build-env
 
 #install all needed stuff
 RUN apt-get update
-RUN apt-get install -y curl git
+RUN apt-get install -y curl git unzip
 
 #clone flutter
 RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
