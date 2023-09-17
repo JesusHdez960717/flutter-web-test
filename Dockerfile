@@ -1,3 +1,4 @@
+#STEP 1: BUILD
 # Environemnt to install flutter and build web
 FROM debian:latest AS build-env
 
@@ -15,12 +16,12 @@ RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK_LOCATION
 #change dir to current flutter folder and make a checkout to the specific version
 RUN cd $FLUTTER_SDK_LOCATION && git checkout tags/$FLUTTER_VERSION
 
-#setup the flutter path as an enviromental variable
+#setup the flutter path as an environment variable
 ENV PATH="$FLUTTER_SDK_LOCATION/bin:$FLUTTER_SDK_LOCATION/bin/cache/dart-sdk/bin:${PATH}"
 
 #Start to run Flutter commands
 #doctor to see if all was installed ok
-RUN flutter doctor
+RUN flutter doctor -v
 
 #create folder to copy source code
 RUN mkdir $APP_LOCATION
@@ -36,6 +37,7 @@ RUN flutter build web
 
 #once heare the app will be compiled and ready to deploy
 
+#STEP 2: DEPLOY
 #use nginx to deploy
 FROM nginx:1.25.2-alpine
 
