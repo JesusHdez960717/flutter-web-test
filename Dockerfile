@@ -12,14 +12,14 @@ ARG APP=/app/
 #clone flutter
 RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK
 #change dir to current flutter folder and make a checkout to the specific version
-RUN cd $FLUTTER_SDK && git checkout efbf63d9c66b9f6ec30e9ad4611189aa80003d31
+RUN cd $FLUTTER_SDK && git checkout tags/3.13.0
 
 #setup the flutter path as an enviromental variable
 ENV PATH="$FLUTTER_SDK/bin:$FLUTTER_SDK/bin/cache/dart-sdk/bin:${PATH}"
 
 #Start to run Flutter commands
 #doctor to see if all was installes ok
-RUN flutter doctor -v
+RUN flutter doctor
 
 #create folder to copy source code
 RUN mkdir $APP
