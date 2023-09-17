@@ -19,7 +19,7 @@ RUN cd $FLUTTER_SDK_LOCATION && git checkout tags/$FLUTTER_VERSION
 ENV PATH="$FLUTTER_SDK_LOCATION/bin:$FLUTTER_SDK_LOCATION/bin/cache/dart-sdk/bin:${PATH}"
 
 #Start to run Flutter commands
-#doctor to see if all was installes ok
+#doctor to see if all was installed ok
 RUN flutter doctor
 
 #create folder to copy source code
