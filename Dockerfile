@@ -44,7 +44,6 @@ FROM nginx:1.25.2-alpine
 #copy the info of the builded web app to nginx
 COPY --from=build-env /app/build/web /usr/share/nginx/html
 
-ARG API_URL=https://api.miservidor.com
 RUN echo "window.env = { API_URL: '${API_URL}' };" > /usr/share/nginx/html/env.js
 
 #Expose port and run nginx
