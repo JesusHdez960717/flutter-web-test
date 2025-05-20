@@ -34,14 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Root101 OnBoarding page'),
+        title: const Text('Test 123'),
       ),
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'We are too lazy to make a better OnBoarding page.',
+              'Testing Flutter Web',
             ),
           ],
         ),
