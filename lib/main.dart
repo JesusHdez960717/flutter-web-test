@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'env.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Test 123'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Testing Flutter Web',
-            ),
+            const Text('Testing Flutter Web'),
+            Text('API: ${env.API_URL}'),
           ],
         ),
       ),

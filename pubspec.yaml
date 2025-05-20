@@ -12,6 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  web: 1.1.1
+  js_interop: 0.0.1
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
